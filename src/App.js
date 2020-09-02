@@ -40,8 +40,16 @@ function App() {
           playlists : playlists,
         });
       });
+
+      spotify.getPlaylist('37i9dQZF1DX5Ejj0EkURtP').then(response =>{
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly:response,
+
+        })
+      })
     }
-    console.log("I have a token",token);
+    // console.log("I have a token",token);
   },[token,dispatch]);
   console.log("User is",user);
   console.log("Token is",token);
